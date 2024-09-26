@@ -1,0 +1,42 @@
+//search contain text in web page
+allintext: free bitcoin
+
+//search title with contain text
+allintitle: "company tell"
+
+//search contain words in url
+allinurl: abhishek
+
+//search specific file 
+allinurl: facebook filetype: pdf
+
+//search only single keyword in url
+inurl: admin
+
+//search various keyword inside the title "security" in title but "tools can be somewhere else in the page
+intitle: security tools
+
+//search exact anchor text used on any links
+inanchor: "cyber security"
+
+//useful to locate pages that contain certain characters or strings inside their text.
+intext: "safe internet"
+
+//will show you the full list of all indexed URLs for the specified domain and subdomains
+site: securitytrails.com
+
+//search pages that contain "anything" before your word
+how to * website
+
+//search both word that site containe 
+ | security tips
+
+//use to concatenate words for detect pages that use more than one specific key.
+security + trails
+
+// minus operator avoid word in show result which you given with minus
+security - trails
+
+
+OTHER DORKS -
+    define, info, related, indexof

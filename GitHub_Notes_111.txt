@@ -1,0 +1,114 @@
+------------- Git & GitHub My Learning Material --------------------------
+
+git config -l
+
+git config --global user.name "your_name"
+
+git config --global user.email "your_email"
+
+git config --global color.ui auto
+
+git init
+
+git status 
+
+git add file1.txt file2.txt ...... nth (add in staging area for commit)
+git add . (add all)
+git restore --staged <file>
+
+git reset 'file_name' (unstage)
+git rm --cached
+
+git diff (show changes what add + and what - remove, change but not stage)
+git diff --staged ( staged but not commit )
+git diff 'file_name' (for particular file)
+
+git reflog
+git log
+git log -p (also present what change in file)
+
+git commit -m "message"
+git commit -a -m "message" (add and commit same time)
+
+git show 'hash' (show commit details using hash)
+
+git reset HEAD <file> (first is path)
+
+git reset HEAD -p (un staged specific changes)
+
+
+----------------------- git roll back -----------------------------------------
+
+git revert HEAD
+
+git tag 'content'
+git tag 'content' <hash>
+git tag --list
+git tag -a 'tag' -m 'content'
+git tag -d v0.1
+
+git checkout <tag>
+
+------------------------------- Git Branch ------------------------------------
+
+git branch <new_branch_name>
+git branch
+git checkout <branch_name>
+git checkout -b <branch_name> (create and switch at same time)
+git branch -D <branch_name> (delete branch) (-d use after merge deletation)
+git merge <branch_name>
+
+git rebase <branch_name>
+
+git stash
+git stash pop
+git stash drop
+git stash list
+
+------------------------------- Git Remote --------------------------------------
+
+git init
+create file 
+git add .
+git commit
+git branch main
+git remote add origin URL
+git remote -v
+git push remote origin
+git pull
+
+git clone URL
+
+.gitignore
+
+---------------------------------- GitHub SSh ---------------------------------
+
+
+ssh-keygen -t ed25519 -C "email"
+ssh-keygen -f key_path -t ed25519 -C "email" (custom path)
+ssh -T get@github.com (check key is working or not)
+git clone SSH_URL
+git pull
+
+
+When custom SSH key name ----->
+
+ssh-keygen -f CUSTOM_KEY_PATH -t ed25519 -C "identifier"
+GIT_SSH_COMMAND="ssh -i .ssh_PATH/key git clone SSH_URL (clone for custom name)
+GIT_SSH_COMMAND="ssh -i KEY_PATH" git pull
+
+confit SSH Key ------->
+
+cd c:\key_path
+copy config.txt config
+del config.txt
+
+Host my_github
+	HostName GitHub.com
+	User w3ni
+	IdentityFile ~/ .ssh/github_ed25519
+	IdentitiesOnly yes
+
+ssh -T git@react_project
+git clone git@my_github:w3ni/ecomm.git
+git pull
